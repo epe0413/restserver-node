@@ -22,7 +22,7 @@ const UsuarioSchema = Schema({
         require: true,
         enum: ['ADMIN_ROLE', 'USER_ROLE']
     },
-    correo: {
+    estado: {
         type: Boolean,
         default: true
     },
