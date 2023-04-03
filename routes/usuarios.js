@@ -28,8 +28,12 @@ router.post('/',[
         check('rol').custom( esRolValido ),
         validarCampos
 ],usuariosPost);
+router.delete('/:id',[
+        check('id', 'No es un ID válido').isMongoId(),
+        check('id').custom(existeUsuarioPorId),
+        validarCampos
+], usuariosDelete);
 router.patch('/', usuariosPatch);
-router.delete('/', usuariosDelete);
 
 
 module.exports = router;
