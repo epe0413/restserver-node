@@ -104,7 +104,10 @@ const mostrarImagen = async ( req, res = response ) => {
         }
     }
 
-    res.json({msg: `Falta place holder`})
+    //  Hay que borrar la imagen del servidor
+    const pathImagen = path.join( __dirname, '../assets/no-image.jpg' );
+    return res.sendFile( pathImagen )   
+
 }
 
 module.exports = {
